@@ -1,5 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import Image from "next/image";
+import ImageProfile from "../../assets/perfilpadrao.png";
 
 export const ButtonProfile = () => {
   return (
@@ -7,10 +9,12 @@ export const ButtonProfile = () => {
       <div>
         <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           <span className="sr-only">Open user menu</span>
-          <img
-            className="h-8 w-8 rounded-full"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
+          <Image 
+            src={ImageProfile}
+            alt="profile"
+            width={30}
+            height={30}
+            className="rounded-full"
           />
         </Menu.Button>
       </div>
@@ -27,7 +31,7 @@ export const ButtonProfile = () => {
           <Menu.Item>
             <a
               href="#"
-              className={"bg-gray-100 block px-4 py-2 text-sm text-gray-700"}
+              className={" block px-4 py-2 text-sm text-gray-700"}
             >
               Your Profile
             </a>
@@ -35,7 +39,7 @@ export const ButtonProfile = () => {
           <Menu.Item>
             <a
               href="#"
-              className={"bg-gray-100 block px-4 py-2 text-sm text-gray-700"}
+              className={" block px-4 py-2 text-sm text-gray-700"}
             >
               Settings
             </a>
@@ -43,7 +47,7 @@ export const ButtonProfile = () => {
           <Menu.Item>
             <a
               href="#"
-              className={"bg-gray-100 block px-4 py-2 text-sm text-gray-700"}
+              className={" block px-4 py-2 text-sm text-gray-700"}
             >
               Sign out
             </a>

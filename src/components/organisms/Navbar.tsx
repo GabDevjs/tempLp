@@ -1,10 +1,15 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { AiOutlineMenu, AiOutlinePlus } from "react-icons/ai";
-import { BsBellFill } from "react-icons/bs";
 import { ButtonBell, ButtonProfile, ItemsNavbar, LogoNavabar } from "../atoms";
 
-export const Navbar = () => {
+interface NavbarProps {
+  children?: React.ReactNode;
+  Login?: boolean;
+}
+
+export const Navbar = (props: NavbarProps) => {
+  const { children, Login, ...rest } = props;
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -28,23 +33,31 @@ export const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                 <LogoNavabar />
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8
-                ">
+                <div
+                  className="hidden sm:ml-6 sm:flex sm:space-x-8
+                "
+                >
                   <ItemsNavbar />
                 </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <ButtonBell />
+                
 
-                <ButtonProfile />
+                {Login === true && Login !== undefined ? (
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <ButtonBell />
+
+                    <ButtonProfile />
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden h-full">
-            <div className="my-10 flex flex-col items-center   flex-auto">
+            <div className="my-10 flex flex-col items-center flex-auto">
               <ItemsNavbar />
             </div>
           </Disclosure.Panel>

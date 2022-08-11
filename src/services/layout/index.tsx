@@ -9,7 +9,7 @@ export const Layout = (props:LayoutProps) => {
 
     return (
         <>
-            <Navbar />
+            <Navbar Login={true} />
             <main>
                 {children}
             </main>
