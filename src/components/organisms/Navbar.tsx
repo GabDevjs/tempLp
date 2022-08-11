@@ -44,7 +44,7 @@ export const Navbar = () => {
           </div>
 
           <Disclosure.Panel className="sm:hidden h-full">
-            <div className="my-10 flex flex-col items-center  flex-auto">
+            <div className="my-10 flex flex-col items-center   flex-auto">
               <ItemsNavbar />
             </div>
           </Disclosure.Panel>
