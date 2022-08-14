@@ -1,19 +1,16 @@
-import { Footer, Navbar } from "../../components/organisms"
-
+import { Footer, Navbar } from "../../components/organisms";
 interface LayoutProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const Layout = (props:LayoutProps) => {
-    const { children, ... rest } = props
+export const Layout = (props: LayoutProps) => {
+  const { children, ...rest } = props;
 
-    return (
-        <>
-            <Navbar Login={true} />
-            <main>
-                {children}
-            </main>
-            <Footer />
-        </>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};

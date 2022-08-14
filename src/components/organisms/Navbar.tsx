@@ -16,7 +16,16 @@ export const Navbar = (props: NavbarProps) => {
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 border-b border-gray-800 border-opacity-20">
             <div className="relative flex justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
+                <LogoNavabar />
+                <div
+                  className="hidden sm:ml-6 sm:flex sm:space-x-8
+                "
+                >
+                  <ItemsNavbar />
+                </div>
+              </div>
+              <div className="absolute inset-y-0 right-0  -0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
@@ -33,31 +42,11 @@ export const Navbar = (props: NavbarProps) => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                <LogoNavabar />
-                <div
-                  className="hidden sm:ml-6 sm:flex sm:space-x-8
-                "
-                >
-                  <ItemsNavbar />
-                </div>
-                
-
-                {Login === true && Login !== undefined ? (
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <ButtonBell />
-
-                    <ButtonProfile />
-                  </div>
-                ) : (
-                  <></>
-                )}
-              </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden h-full">
-            <div className="my-10 flex flex-col items-center flex-auto">
+            <div className="mt-3 flex flex-col items-center flex-auto pb-2">
               <ItemsNavbar />
             </div>
           </Disclosure.Panel>
