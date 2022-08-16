@@ -28,8 +28,8 @@ const Page404: NextPage = ()  => {
               </p>
               <div className="mt-6">
                 <a
-                  href="#"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-black text-opacity-75 bg-white bg-opacity-75 sm:bg-opacity-25 sm:hover:bg-opacity-50"
+                  href="/"
                 >
                   Go back home
                 </a>

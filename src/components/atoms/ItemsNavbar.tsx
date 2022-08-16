@@ -1,34 +1,29 @@
-const items = [
-  {
-    name: "Dashboard",
-    to: "/",
-    icon: "dashboard",
-  },
-  {
-    name: "Team",
-    to: "/",
-    icon: "people",
-  },
-];
-
+import { AiOutlineHome } from "react-icons/ai";
+import { BsFillJournalBookmarkFill } from "react-icons/bs";
 
 interface ItemsNavbarProps {
-    mobile?: boolean;
+  mobile?: boolean;
+  items?: any;
 }
 export const ItemsNavbar = (props: ItemsNavbarProps) => {
-const { mobile } = props;
-    
+  const { mobile, items, ...rest } = props;
+
   return (
     <>
-      {items.map((item, index) => {
+      {items  &&
+      items.map((item: any, index: any) => {
         return (
-          <a
+          <span
             key={index}
-            href={item.to}
-            className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 py-2 border-b-2 text-sm font-medium"
+            className="flex justify-center items-center h-full w-full py-2"
           >
-            {item.name}
-          </a>
+            <a href={item.to} className="text-base font-medium hover:text-primary hover:scale-105 transition-all flex justify-between items-center">
+              <span className="mr-1">
+              {item.icon}
+              </span>
+              {item.name}
+            </a>
+          </span>
         );
       })}
     </>
