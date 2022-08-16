@@ -1,6 +1,6 @@
 export const Home = () => {
   return (
-    <header className="p-3">
+    <header className="sm:p-3">
       <div className="relative">
         <div className="absolute inset-x-0 bottom-0 h-1/2" />
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
